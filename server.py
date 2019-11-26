@@ -4,13 +4,13 @@ from flask import Flask, request
 from pymessenger.bot import Bot
 
 app = Flask(__name__)
-ACCESS_TOKEN = 'EAAIkgXGxCgQBAM9OvPf4D1g0dkHeZBKvmdQIQMzRdRzyQYBE7NxKzOutUKXFZCdijhIKyKqmJV9tZBP45X44sMpgGYFZBkAd6RTZAtNxgWtcN8DNCFMPOGb41UmsZBT4GU5ZC9VTVJoEgpP06oSRVQJ2kA4pccJyVSnPpf4foxMfQZDZD'
-VERIFY_TOKEN = 'asdfghjkl'
+ACCESS_TOKEN = 'EAAIkgXGxCgQBAAJgsuJH1ZCjPE8nKNUmgKqJR3FewURIpW6NwWT3zbeW77AyoDLaYvd36ceLMeSBzmoUc6txlqSWQRz9FX7MRUNRHNtfNifWh5MpiGwuhkoOj3p2g5ZBA8oAQgDj4A9ImB75YUDnPsHJeHzjK1gcgOM7B1ZCgZDZD'
+VERIFY_TOKEN = 'hello'
 bot = Bot(ACCESS_TOKEN)
 
 
 # We will receive messages that Facebook sends our bot at this endpoint
-@app.route("/webhook", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def receive_message():
     if request.method == 'GET':
         """Before allowing people to message your bot, Facebook has implemented a verify token
